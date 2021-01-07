@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Vicara</string>
+    <string name="bt_on">Connected</string>
+    <string name="bt_off">Disconnected</string>
+    <string name="network_connected_mobile">Connected to Mobile Network</string>
+    <string name="network_connected_wifi">Connected to Wi-Fi Network</string>
+    <string name="network_disconnected">Network is Disconnected</string>
+    <string name="network_default">Network Status Unknown</string>
+    <string name="network_label">Network Status </string>
+    <string name="bt_label">Bluetooth Status : </string>
 </resources>
