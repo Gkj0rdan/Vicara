@@ -52,7 +52,7 @@ public class NetworkSchedulerService extends JobService implements
     public int onStartCommand(Intent intent, int flags, int startId) {
         createNotificationChannel();
         showNotification();
-        return START_NOT_STICKY;
+        return START_STICKY;
     }
 
     private void showNotification() {
@@ -66,8 +66,9 @@ public class NetworkSchedulerService extends JobService implements
                 .setContentText("Vicara")
                 .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                 .setCustomContentView(notificationView)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.app_icon)
                 .setContentIntent(pendingIntent)
+                .setCategory(Notification.CATEGORY_SERVICE)
                 .build();
         startForeground(1, notification);
     }
