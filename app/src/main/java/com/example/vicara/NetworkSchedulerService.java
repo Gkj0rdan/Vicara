@@ -77,8 +77,12 @@ public class NetworkSchedulerService extends JobService implements
     @Override
     public boolean onStartJob(JobParameters params) {
         Log.i(TAG, "onStartJob" + mConnectivityReceiver);
-        registerReceiver(mConnectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+        filter.addAction(Intent.ACTION_SCREEN_ON);
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
+        filter.addAction(Intent.ACTION_USER_PRESENT);
         registerReceiver(mConnectivityReceiver, filter);
         return true;
     }
